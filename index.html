@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click the Black Tiles</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script defer src="script.js"></script>
+
+</head>
+<body>
+
+  <div id="cover">
+    <h1>Click the Black Tiles</h1>
+    <h2>Project Members</h2>
+
+    <div class="members">
+      <div class="member">
+        <img src="images/member1.jpg" alt="Member 1">
+        <div class="member-name">Member 1</div>
+      </div>
+
+      <div class="member">
+        <img src="images/member2.jpg" alt="Member 2">
+        <div class="member-name">Member 2</div>
+      </div>
+
+      <div class="member">
+        <img src="images/member3.jpg" alt="Member 3">
+        <div class="member-name">Member 3</div>
+      </div>
+    </div>
+
+    <div class="hint">Click anywhere to start</div>
+  </div>
+
+  <div id="countdownOverlay" class="hidden">
+    <div id="countdownNumber">3</div>
+  </div>
+
+  <div id="gameContainer" class="hidden">
+
+    <div class="top-bar">
+      <div>
+        <div class="label">Hi-Score</div>
+        <div class="value" id="hiScoreValue">0</div>
+      </div>
+
+      <div>
+        <div class="label">Score</div>
+        <div class="value" id="scoreValue">0</div>
+      </div>
+
+      <div>
+        <div class="label">Time</div>
+        <div class="value" id="timeValue">10</div>
+      </div>
+    </div>
+
+    <div id="message">Tap the black tiles!</div>
+
+    <div id="board">
+      <div class="tile" data-index="0"><span class="points"></span></div>
+      <div class="tile" data-index="1"><span class="points"></span></div>
+      <div class="tile" data-index="2"><span class="points"></span></div>
+      <div class="tile" data-index="3"><span class="points"></span></div>
+
+      <div class="tile" data-index="4"><span class="points"></span></div>
+      <div class="tile" data-index="5"><span class="points"></span></div>
+      <div class="tile" data-index="6"><span class="points"></span></div>
+      <div class="tile" data-index="7"><span class="points"></span></div>
+
+      <div class="tile" data-index="8"><span class="points"></span></div>
+      <div class="tile" data-index="9"><span class="points"></span></div>
+      <div class="tile" data-index="10"><span class="points"></span></div>
+      <div class="tile" data-index="11"><span class="points"></span></div>
+
+      <div class="tile" data-index="12"><span class="points"></span></div>
+      <div class="tile" data-index="13"><span class="points"></span></div>
+      <div class="tile" data-index="14"><span class="points"></span></div>
+      <div class="tile" data-index="15"><span class="points"></span></div>
+    </div>
+
+    <div id="pointLabel">Point bar (10 → 0 in 1 second)</div>
+    <div id="pointBarWrapper">
+      <div id="pointBarInner"></div>
+    </div>
+
+    <div id="instruction">Click on a black tile</div>
+  </div>
+
+  <div id="endOverlay" class="hidden">
+    <div id="endTitle">Time is up</div>
+    <div id="endSubtitle">
+      Your score: <span id="finalScore">0</span>
+    </div>
+    <div id="playAgain" class="blinking">
+      Press F5 to play again
+    </div>
+  </div>
+
+</body>
+</html>

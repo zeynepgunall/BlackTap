@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Click the Black Tiles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BlackTap</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -16,23 +17,14 @@
 <body>
 
   <div id="cover">
-    <h1>Click the Black Tiles</h1>
-    <h2>Project Members</h2>
+    <h1>BlackTap</h1>
 
-    <div class="members">
-      <div class="member">
-        <img src="images/member1.jpg" alt="Member 1">
-        <div class="member-name">Member 1</div>
-      </div>
-
-      <div class="member">
-        <img src="images/member2.jpg" alt="Member 2">
-        <div class="member-name">Member 2</div>
-      </div>
-
-      <div class="member">
-        <img src="images/member3.jpg" alt="Member 3">
-        <div class="member-name">Member 3</div>
+    <div class="difficulty-selection">
+      <h3>Select Difficulty</h3>
+      <div class="difficulty-buttons">
+        <button class="difficulty-btn" data-difficulty="easy">Easy<br><span>15s • 2 tiles</span></button>
+        <button class="difficulty-btn active" data-difficulty="medium">Medium<br><span>10s • 3 tiles</span></button>
+        <button class="difficulty-btn" data-difficulty="hard">Hard<br><span>7s • 4 tiles</span></button>
       </div>
     </div>
 
@@ -60,9 +52,59 @@
         <div class="label">Time</div>
         <div class="value" id="timeValue">10</div>
       </div>
+
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
     </div>
 
+    <div id="settingsMenu" class="settings-menu hidden">
+      <div class="settings-header">
+        <h3>Settings</h3>
+        <button id="closeSettings" class="close-settings-btn">×</button>
+      </div>
+      
+      <div class="settings-content">
+        <div class="settings-section">
+          <h4>Sound</h4>
+          <div class="settings-option">
+            <label class="toggle-switch">
+              <input type="checkbox" id="soundToggleCheckbox" checked>
+              <span class="toggle-slider"></span>
+            </label>
+            <span class="settings-label">Sound Effects</span>
+          </div>
+        </div>
+
+        <div class="settings-section">
+          <h4>Difficulty</h4>
+          <div class="difficulty-options">
+            <button class="difficulty-option-btn" data-difficulty="easy">
+              <span class="difficulty-name">Easy</span>
+              <span class="difficulty-details">15s • 2 tiles</span>
+            </button>
+            <button class="difficulty-option-btn active" data-difficulty="medium">
+              <span class="difficulty-name">Medium</span>
+              <span class="difficulty-details">10s • 3 tiles</span>
+            </button>
+            <button class="difficulty-option-btn" data-difficulty="hard">
+              <span class="difficulty-name">Hard</span>
+              <span class="difficulty-details">7s • 4 tiles</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="settingsOverlay" class="settings-overlay hidden"></div>
+
     <div id="message">Tap the black tiles!</div>
+
+    <div id="comboContainer">
+      <div id="comboDisplay">0x COMBO!</div>
+      <div id="comboBonus">+0 bonus</div>
+    </div>
+
+    <div id="powerUpNotification"></div>
 
     <div id="board">
       <div class="tile" data-index="0"><span class="points"></span></div>
@@ -99,8 +141,9 @@
     <div id="endSubtitle">
       Your score: <span id="finalScore">0</span>
     </div>
+    <button id="playAgainBtn" class="play-again-btn">Play Again</button>
     <div id="playAgain" class="blinking">
-      Press F5 to play again
+      Or press F5 to reload
     </div>
   </div>
 

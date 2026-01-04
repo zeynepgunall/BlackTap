@@ -8,4 +8,4 @@ BlackTap is a fast-paced reflex game built with HTML, CSS, and JavaScript.
 - Beat the clock and set a new high score
 
 ## 🚀 Live Demo
-https://kullaniciadin.github.io/blacktap
+https://zeynepgunall.github.io/blacktap
